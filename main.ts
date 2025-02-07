@@ -1,8 +1,8 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    showSprite(sprites.create(list._pickRandom(), SpriteKind.Player))
+    createSprite(list)
 })
-function showSprite (mySprite: Sprite) {
-    mySprite.setPosition(randint(0, scene.screenWidth() - 8), randint(0, scene.screenHeight() - 8))
+function createSprite (spriteImageArray: Image[]) {
+    sprites.create(spriteImageArray._pickRandom(), SpriteKind.Player).setPosition(randint(0, scene.screenWidth() - 8), randint(0, scene.screenHeight() - 8))
 }
 let list: Image[] = []
 list = [
